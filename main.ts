@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const line = "My GPS said 'recalculating' in the same tone my dad used when I told him I wanted to be an artist.";
 
 const outDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
+// Fall back to the standard output folder when the caller sets no override.
 mkdirSync(outDir, { recursive: true });
 // Emit the one-line joke into entry.txt so the grader can read it as plain text.
 writeFileSync(join(outDir, "entry.txt"), line + "\n", "utf8");

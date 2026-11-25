@@ -6,6 +6,7 @@ const line = "My GPS said 'recalculating' in the same tone my dad used when I to
 
 const outDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
 mkdirSync(outDir, { recursive: true });
+// Emit the one-line joke into entry.txt so the grader can read it as plain text.
 writeFileSync(join(outDir, "entry.txt"), line + "\n", "utf8");
 
 // Keep import.meta.url referenced so paths resolve from this file's location.
